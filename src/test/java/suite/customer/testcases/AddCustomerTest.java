@@ -1,11 +1,7 @@
-package suite.bankmanager.testcases;
+package suite.customer.testcases;
 
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import utilities.Constans;
 import utilities.DataProviders;
-import utilities.DataUtil;
-import utilities.ExcelReader;
 
 import java.util.Hashtable;
 

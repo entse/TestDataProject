@@ -14,4 +14,7 @@ public class Constans {
 
     public static String RUNMODE_YES = "Y";
     public static String RUNMODE_NO = "N";
+
+    public static String SUITE1_XL_PATH = System.getProperty("user.dir") + "\\src\\test\\resources\\testdata\\BankManagerSuite.xlsx";
+    public static String SUITE2_XL_PATH = System.getProperty("user.dir") + "\\src\\test\\resources\\testdata\\CustomerSuite.xlsx";
 }
