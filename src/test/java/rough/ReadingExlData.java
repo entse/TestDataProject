@@ -4,6 +4,7 @@ import utilities.Constans;
 import utilities.ExcelReader;
 
 public class ReadingExlData {
+
     public static void main(String[] args) {
 
         ExcelReader excel = new ExcelReader(System.getProperty("user.dir")+"\\src\\test\\resources\\testdata\\BankManagerSuite.xlsx");
