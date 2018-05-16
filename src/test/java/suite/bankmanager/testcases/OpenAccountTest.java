@@ -14,6 +14,10 @@ public class OpenAccountTest {
     @Test(dataProviderClass = DataProviders.class, dataProvider = "bankManagerDP")
     public void openAccountTest(Hashtable<String, String> data){
 
+
+        ExcelReader excel = new ExcelReader(Constans.SUITE1_XL_PATH);
+        DataUtil.checkExecution("BankManagerSuite", "OpenAccountTest", data.get("Runmode"), excel);
+
     }
 
 

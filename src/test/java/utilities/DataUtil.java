@@ -1,11 +1,30 @@
 package utilities;
 
+import org.testng.SkipException;
+
 import java.util.Hashtable;
 
 public class DataUtil {
 
-    public static boolean isSuiteRunnable(String suiteName, ExcelReader excel){
+    public static void checkExecution (String testSuiteName, String testCaseName, String dataRunMode, ExcelReader excel) throws SkipException {
 
+        if(!isSuiteRunnable(testSuiteName)){
+            throw new SkipException("Skipping the test :" + testCaseName + "cause the Runmode of Test Suite :" + testSuiteName + "is NO");
+        }
+
+        if(!isTestRunnable(testCaseName, excel)){
+            throw new SkipException("Skipping the test :" + testCaseName + "cause the Runmode of Test Case :" + testCaseName + "is NO");
+        }
+
+        if(dataRunMode.equalsIgnoreCase(Constans.RUNMODE_NO)){
+            throw new SkipException("Skipping the test :" + testCaseName + "cause the Runmode for DataSet is NO");
+        }
+    }
+
+
+    public static boolean isSuiteRunnable(String suiteName){
+
+        ExcelReader excel = new ExcelReader(Constans.SUITE_XL_PATH);
         int rows = excel.getRowCount(Constans.SUITE_SHEET);
 
         for (int rowNUm = 2; rowNUm <= rows; rowNUm++){
